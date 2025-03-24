@@ -110,7 +110,7 @@ const deleteOne = async (req, res) => {
   let expense = null;
 
   try {
-    expense = getExpensesById(id);
+    expense = await getExpensesById(id);
   } catch {
     res.sendStatus(422);
 
