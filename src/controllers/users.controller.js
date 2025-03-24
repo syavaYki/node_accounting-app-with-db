@@ -20,13 +20,13 @@ const getOne = async (req, res) => {
   try {
     user = await getUserById(id);
   } catch (e) {
-    res.status(422);
+    res.sendStatus(422);
 
     return;
   }
 
   if (!user) {
-    res.status(404);
+    res.sendStatus(404);
 
     return;
   }

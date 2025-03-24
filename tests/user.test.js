@@ -19,7 +19,7 @@ describe('User', () => {
   let serverInstance;
   let api;
 
-  const HOST = 'http://localhost:7050/';
+  const HOST = 'http://localhost:7080/';
 
   beforeAll(async () => {
     try {
@@ -39,7 +39,7 @@ describe('User', () => {
   beforeEach(async () => {
     server = createServer();
 
-    serverInstance = server.listen(7050, () => {
+    serverInstance = server.listen(7080, () => {
       console.log(HOST);
     });
 

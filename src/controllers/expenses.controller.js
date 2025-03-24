@@ -15,7 +15,7 @@ const getAll = async (req, res) => {
   try {
     allExpenses = await getAllExpenses(userId, categories, from, to);
   } catch {
-    res.status(404);
+    res.sendStatus(404);
   }
   res.send(allExpenses.map((exp) => noramalize(exp)));
 };
@@ -27,13 +27,13 @@ const getOne = async (req, res) => {
   try {
     expense = await getExpensesById(id);
   } catch {
-    res.status(422);
+    res.sendStatus(422);
 
     return;
   }
 
   if (!expense) {
-    res.status(404);
+    res.sendStatus(404);
 
     return;
   }

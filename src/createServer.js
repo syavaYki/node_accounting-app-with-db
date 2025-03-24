@@ -10,10 +10,6 @@ function createServer() {
 
   app.use(cors());
 
-  app.options('*', cors(), (req, res) => {
-    res.send();
-  });
-
   app.use(express.json());
   app.use('/users', usersRoute);
   app.use('/expenses', expensesRoute);
